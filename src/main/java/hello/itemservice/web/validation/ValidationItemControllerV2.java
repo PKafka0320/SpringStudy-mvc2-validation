@@ -183,7 +183,7 @@ public class ValidationItemControllerV2 {
             bindingResult.rejectValue("itemName", "required");
         }
         if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
-            bindingResult.rejectValue("price", "range", new Object[]{1000, 1000000}, null);
+            bindingResult.rejectValue("price", "range", new Object[]{10000, 1000000}, null);
         }
         if (item.getQuantity() == null || item.getQuantity() >= 9999) {
             bindingResult.rejectValue("quantity", "max", new Object[]{9999}, null);
@@ -193,7 +193,7 @@ public class ValidationItemControllerV2 {
         if (item.getPrice() != null && item.getQuantity() != null) {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000) {
-                bindingResult.reject("totalPriceMin", new Object[]{1000, resultPrice}, null);
+                bindingResult.reject("totalPriceMin", new Object[]{10000, resultPrice}, null);
             }
         }
 
