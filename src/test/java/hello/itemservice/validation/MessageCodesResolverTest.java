@@ -1,4 +1,4 @@
-package hello.itemservice.validate;
+package hello.itemservice.validation;
 
 import static org.assertj.core.api.Assertions.*;
 
